@@ -37,7 +37,7 @@ func AddrCommand() *cli.Command {
 				return fmt.Errorf("❌ Address must be 32 bytes (got %d)", len(data))
 			}
 
-			addr := address.NewAddress(byte(workchain), 1, data)
+			addr := address.NewAddress(byte(workchain), byte(workchain), data)
 			fmt.Println("✅ Bounceable address:", addr.String())
 			return nil
 		},
